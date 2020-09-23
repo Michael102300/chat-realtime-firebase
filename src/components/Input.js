@@ -24,14 +24,16 @@ export default function Input(props){
                     value={message}
                     onChange={ (e)  => setMessage(e.nativeEvent.text)}
                 />
-                <TouchableOpacity onPress={onSubmit}>
+            </Item>
+            <View style={styles.iconBtn}>
+                <TouchableOpacity onPress={onSubmit} >
                     <Icon 
                         name="send"
                         style={styles.iconSend}
                         type="MaterialIcons"
                     />
                 </TouchableOpacity>
-            </Item>
+            </View>
         </View>
     )
 }
@@ -40,13 +42,28 @@ const styles = StyleSheet.create({
     container:{
         backgroundColor:'#16202B',
         paddingBottom: Platform.OS === 'ios' ? 20 : 0,
-        paddingHorizontal: 20
+        paddingLeft: 5,
+        paddingRight: 25,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        height: 50
     },
     itemInput:{
         borderColor: '#16202B',
+        width: '90%',
+        borderRadius: 20,
+        marginRight: 5,
     },
     input:{
         color:'#ffff',
+    },
+    iconBtn:{
+        justifyContent:'center',
+        alignItems: 'center',
+        width: 50,
+        height: '100%',
+        borderRadius: 50,
+        backgroundColor: '#00bb2d',
     },
     iconSend:{
         color: '#fff'
